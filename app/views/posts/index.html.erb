@@ -1,0 +1,7 @@
+<h1>投稿一覧</h1>
+
+<%= link_to "投稿する", new_post_path %>
+
+<% @posts.each do |post| %>
+  <p>タイトル:<%= post.title %></p>
+<% end %>

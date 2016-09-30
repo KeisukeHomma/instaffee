@@ -1,0 +1,9 @@
+
+<%= form_for(@post) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "投稿一覧に戻る", posts_path %>
