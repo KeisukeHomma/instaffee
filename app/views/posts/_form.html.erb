@@ -1,9 +1,29 @@
+<% if notice.present? %>
+    <div class="alert alert-info" role="alert">
+      <strong><%= notice %></strong>
+    </div>
+<% end %>
 
 <%= form_for(@post) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.submit %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger" role="alert">
+        <strong><%= @post.errors.count %>件のエラーがあります</strong>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li style="list-style-type: none;"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group tweet-form">
+    <%= f.text_field :title, class: 'form-control', placeholder: 'キャプション' %>
+  </div>
+
+  <%= f.submit '投稿する', class: 'btn btn-primary btn-lg tweet-button2' %>
+
 <% end %>
 
 <%= link_to "投稿一覧に戻る", posts_path %>
