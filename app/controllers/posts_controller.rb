@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if params[:back]
+      @post = Post.new(posts_params)
+    else
+      @post = Post.new
+    end
   end
 
   def create
@@ -29,6 +33,11 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_path, notice: "投稿を消去しました！"
+  end
+
+  def confirm
+    @post = Post.new(posts_params)
+    render :new if @post.invalid?
   end
 
   private

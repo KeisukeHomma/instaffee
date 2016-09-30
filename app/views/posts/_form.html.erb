@@ -4,7 +4,7 @@
     </div>
 <% end %>
 
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, url: choose_new_or_edit) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger" role="alert">
