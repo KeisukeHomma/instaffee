@@ -20,10 +20,10 @@ end
 n = 1
 while n <= 20
   title = Faker::Lorem.sentence
-  picture = Faker::Placeholdit.image
-  Post.create(
+  image_path = File.join(Rails.root, "test/fixtures/images/404.png")
+  Post.create!(
     title: title,
-    picture: picture,
+    picture: File.new(image_path),
     user_id: n
   )
   n = n + 1

@@ -20,7 +20,6 @@
 
       <% @posts.each do |post| %>
         <p>
-          <strong>Picture:</strong>
           <% if post.picture? %>
             <div class="thumbnail">
               <%= image_tag post.picture.url %>

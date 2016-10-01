@@ -1,0 +1,14 @@
+<h1>Instaffeeに投稿されました！</h1>
+
+<p><%= @post.title %></p>
+<p>
+  <% if @post.picture? %>
+    <div class="thumbnail">
+      <%= image_tag @post.picture.url %>
+    </div>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'タイムラインへ行く', posts_url %>
+</p>

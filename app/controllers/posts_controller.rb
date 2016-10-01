@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: "投稿しました！"
+      NoticeMailer.sendmail_post(@post).deliver
     else
       render action: 'new'
     end
