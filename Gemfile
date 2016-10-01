@@ -58,3 +58,8 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
+
+gem 'therubyracer', platforms: :ruby
+gem 'rails_admin'
+
+gem 'cancan'
