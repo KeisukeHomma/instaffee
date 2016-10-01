@@ -18,6 +18,25 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <% if @post.picture? %>
+      <div class="thumbnail">
+        <%= picture_tag @post.picture.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @post.persisted? && @post.picture? %>
+      <label>
+        <%= f.check_box :remove_picture %>
+      </label>
+    <% end %>
+  </div>
+
   <div class="form-group tweet-form">
     <%= f.text_field :title, class: 'form-control', placeholder: 'キャプション' %>
   </div>

@@ -44,3 +44,7 @@ group :development, :test do
 end
 
 gem 'twitter-bootstrap-rails'
+
+#image uploader
+gem 'carrierwave'
+gem 'rmagick'

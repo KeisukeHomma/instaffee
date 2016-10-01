@@ -13,6 +13,8 @@
       <%= form_for(@post) do |f| %>
         <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
         <%= f.hidden_field :title %>
+        <%= f.hidden_field :picture %>
+        <%= f.hidden_field :picture_cache %>
 
         <!-- @post.titleと@post.contentとすることで、表示用の値を画面に出力しています。 -->
         <p>タイトル:<%= @post.title %></p>
@@ -21,6 +23,8 @@
 
       <%= form_for(@post, url: new_post_path, method: 'get') do |f| %>
         <%= f.hidden_field :title %>
+        <%= f.hidden_field :picture %>
+        <%= f.hidden_field :picture_cache %>
         <%= f.submit "戻る", name: 'back', class: 'btn btn-default btn-block' %>
       <% end %>
 
