@@ -48,3 +48,5 @@ gem 'twitter-bootstrap-rails'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'devise'

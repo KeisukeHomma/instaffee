@@ -10,6 +10,12 @@
           </div>
       <% end %>
 
+      <% if alert.present? %>
+          <div class="alert alert-danger" role="alert">
+            <strong><%= alert %></strong>
+          </div>
+      <% end %>
+
       <%= link_to "投稿する", new_post_path %>
 
       <% @posts.each do |post| %>
