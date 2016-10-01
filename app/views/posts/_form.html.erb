@@ -21,7 +21,7 @@
   <div class="field">
     <% if @post.picture? %>
       <div class="thumbnail">
-        <%= picture_tag @post.picture.url %>
+        <%= image_tag @post.picture.url, class: 'img-responsive' %>
       </div>
     <% end %><br>
     <%= f.label :picture %><br>

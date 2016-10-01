@@ -1,23 +1,31 @@
-<h1>投稿一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 
-<% if notice.present? %>
-    <div class="alert alert-info" role="alert">
-      <strong><%= notice %></strong>
+      <h1>投稿一覧</h1>
+
+      <% if notice.present? %>
+          <div class="alert alert-info" role="alert">
+            <strong><%= notice %></strong>
+          </div>
+      <% end %>
+
+      <%= link_to "投稿する", new_post_path %>
+
+      <% @posts.each do |post| %>
+        <p>
+          <strong>Picture:</strong>
+          <% if post.picture? %>
+            <div class="thumbnail">
+              <%= image_tag post.picture.url %>
+            </div>
+          <% end %>
+        </p>
+        <p>タイトル:<%= post.title %></p>
+        <%= link_to "投稿を編集する", edit_post_path(post.id) %>
+        <%= link_to '投稿を削除する', post_path(post), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+      <% end %>
+
     </div>
-<% end %>
-
-<%= link_to "投稿する", new_post_path %>
-
-<% @posts.each do |post| %>
-  <p>
-    <strong>Picture:</strong>
-    <% if post.picture? %>
-      <div class="thumbnail">
-        <%= image_tag post.picture.url %>
-      </div>
-    <% end %>
-  </p>
-  <p>タイトル:<%= post.title %></p>
-  <%= link_to "投稿を編集する", edit_post_path(post.id) %>
-  <%= link_to '投稿を削除する', post_path(post), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
-<% end %>
+  </div>
+</div>
