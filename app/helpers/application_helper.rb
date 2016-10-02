@@ -35,6 +35,15 @@ module ActionView
       def error_css(method, options = {})
         @template.error_css(@object_name, method, options.merge(object: @object))
       end
+
+      def profile_img(user)
+        unless user.provider.blank?
+          img_url = user.image_url
+        else
+          img_url = 'no_image.png'
+        end
+        image_tag(img_url, alt: user.name)
+      end
     end
   end
 end
