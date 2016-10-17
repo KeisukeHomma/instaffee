@@ -7,8 +7,8 @@ html {
 
 body {
   text-align: center;
-  background-color: #F5F8FA;
-  background: #F5F8FA;
+  background-color: #FAFAFA;
+  background: #FAFAFA;
   font-family: "Hiragino Maru Gothic W4 JIS2004",
   "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
   "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -18,8 +18,8 @@ body {
 
 header {
   width: 100%;
-  background-color: #2AA4EF;
-  height: 54px;
+  background-color: #fff;
+  height: 76px;
   margin: 0;
   padding: 0;
 }
@@ -27,39 +27,46 @@ header {
 .navbar-default {
     border: 0;
     padding: 2px 7px 2px 23px;
-    margin: 0;
 }
 
 .navbar {
-    background-color: #2AA4EF;
+    background-color: #fff;
     height: 100%;
-    color: white;
+    color: #353535;
     margin-bottom: 0px;
     border-radius: 0;
-    box-shadow: 0px 1.5px 2px 1.5px rgba(0,0,0,0.2);
+    box-shadow: 0px 0.5px 1px 1px rgba(0,0,0,0.2);
 }
 
 .navbar-default {
   .navbar-brand {
-    color: #fff;
+    color: #353535;
     &:hover {
       color: #ccc;
     }
   }
   .navbar-nav > li > a {
-    color: #fff;
+    color: #353535;
     &:hover, &:focus {
       color: #ccc;
     }
   }
   .navbar-nav > .open > a {
-    background-color: #2AA4EF;
-    color: white;
+    background-color: #353535;
+    color: #353535;
     &:hover, &:focus {
-      background-color: #2AA4EF;
+      background-color: #353535;
       color: #ccc;
     }
   }
+}
+
+.navbar-brand{
+  margin-top: 10px;
+}
+
+.menu-list{
+  margin-top: 10px;
 }
 
 @media (max-width: 767px) {
@@ -71,9 +78,9 @@ header {
     }
   }
   .navbar-default .navbar-toggle {
-    background-color: #2AA4EF;
+    background-color: #353535;
     &:hover, &:focus {
-      background-color: #2AA4EF;
+      background-color: #353535;
     }
   }
 }
@@ -83,8 +90,10 @@ header {
   padding-bottom: 15%;
   width: 100%;
   background-size: cover;
-  background-image: url("header.jpg");
+  background-image: url("top-coffee.jpg");
   background-attachment: fixed;
+  color: #353535;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
 }
 
 .main-header img {
@@ -120,7 +129,7 @@ header {
 
 footer {
   width: 100%;
-  background-color:#2AA4EF;
+  background-color:#353535;
   padding: 20px 0 10px 0;
   color: white;
   margin: auto;
@@ -135,7 +144,7 @@ ________________________*/
 .page-top-btn {
   display: none;
   border-radius: 50px;
-  background: #336699;
+  background: #353535;
   width: 60px;
   height: 60px;
   transition: all 0.3s;
@@ -166,7 +175,7 @@ h1{
 }
 
 .tweet-button{
-  background: #2AA4EF;
+  background: #353535;
   height: 100px;
   width: 100px;
   position: block;

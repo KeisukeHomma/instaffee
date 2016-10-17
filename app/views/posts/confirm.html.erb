@@ -11,11 +11,18 @@
       <h3>以下の内容で、送信する。</h3>
 
       <%= form_for(@post) do |f| %>
-        <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
+
         <%= f.hidden_field :title %>
         <%= f.hidden_field :picture %>
         <%= f.hidden_field :picture_cache %>
 
+        <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
+        <% if @post.picture? %>
+          <div class="thumbnail">
+            <%= image_tag @post.picture.url, class: 'img-responsive' %>
+          </div>
+        <% end %><br>
+        
         <!-- @post.titleと@post.contentとすることで、表示用の値を画面に出力しています。 -->
         <p>タイトル:<%= @post.title %></p>
         <%= f.submit "登録", class: 'btn btn-primary btn-block' %>
